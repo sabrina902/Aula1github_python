@@ -1,5 +1,7 @@
 import flet as ft
 
+
+
 def main(page: ft.page):
     page.title="Calculadora IMC"
     page.window.width=600
