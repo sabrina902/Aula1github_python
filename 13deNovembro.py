@@ -29,9 +29,6 @@ def main(page: ft.page):
             result_text.value=f"seu IMC é {imc:.2f}  - obesidade 3!"
             result_image.src="src/obesidade3.png"
         
-
-
-        
         page.update()
 
 
