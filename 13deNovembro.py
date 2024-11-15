@@ -11,24 +11,25 @@ def main(page: ft.page):
            altura_metros= float(altura_field.value )/100
            imc=peso/(altura_metros ** 2)
 
-        if imc<18.5:
+        if imc<18.6:
             result_text.value=f"seu IMC é {imc:.2f}  - abaixo do peso!"
             result_image.src="src/baixo.png"
         elif imc<24.9:
             result_text.value=f"seu IMC é {imc:.2f}  - peso normal!"
             result_image.src="src/normal.png"
-        elif imc<24.9:
-            result_text.value=f"seu IMC é {imc:.2f}  - sobrepeso!"
-            result_image.src="src/sobrepeso.png"
-        elif imc<29.9:
+        elif imc>29.9:
             result_text.value=f"seu IMC é {imc:.2f}  - obesidade 1!"
             result_image.src="src/obesidade1.png"
-        elif imc<34.9:
+        elif imc >39.9:
             result_text.value=f"seu IMC é {imc:.2f}  - obesidade 2!"
             result_image.src="src/obesidade2.png"
-        elif imc<40.9:
+        elif imc>49.9:
             result_text.value=f"seu IMC é {imc:.2f}  - obesidade 3!"
             result_image.src="src/obesidade3.png"
+        
+
+
+        
         page.update()
 
 
@@ -83,7 +84,7 @@ def main(page: ft.page):
     )
     
     result_image=ft.Image(src="src/imc.png", width=150,height='150')
-    salvar_button=ft.ElevatedButton(on_click=salvar)
+    salvar_button=ft.ElevatedButton("calcular",on_click=salvar)
 
     page.add(
         ft.Row(
